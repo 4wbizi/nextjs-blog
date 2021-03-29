@@ -1,9 +1,16 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import Date from '../../components/date'
+import utilStyles from '../../styles/utils.module.css'
+
 
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      <Date dateString={postData.date} />  
       {postData.title}
       <br />
       {postData.id}
